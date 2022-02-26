@@ -8,7 +8,9 @@ Resturant app created with Reactjs , Redux, Redux-thunk, Data fetched from Json 
 
 ### Search bar - Resturants Tags - Resturants List
 
-### Details Resturant - Choosen Resturant Details
+## Details Resturant
+
+### Choosen Resturant Details
 
 # Getting Started with Create React App
 
