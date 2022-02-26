@@ -1,0 +1,80 @@
+.searchBox {
+  margin: 0 auto;
+  text-align: center;
+  padding: 50px 0 0;
+}
+
+.searchInput {
+  width: 50%;
+  height: 50px;
+  padding-left: 50px;
+  border-radius: 20px;
+  background-color: #f1f1f1;
+  border: 0;
+  background-image: url("https://static.thenounproject.com/png/101791-200.png");
+  background-position: 20px 13px;
+  background-repeat: no-repeat;
+  background-size: 25px;
+}
+
+input:focus {
+  outline: none;
+}
+
+.resurant-wrapper {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 0.2fr 1fr 1.2fr 0.8fr;
+  gap: 1rem;
+  text-align: center;
+}
+.card {
+  display: flex;
+  gap: 20px;
+  background: #fff;
+  box-shadow: 0 0 25px 0 hsl(0deg 0% 87% / 75%);
+  border-radius: 10px;
+  transition: all 0.5s ease-in;
+}
+.card:hover {
+  opacity: 0.6;
+}
+
+.navigate {
+  text-decoration: none;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.card .image img {
+  padding: 10px;
+  border-radius: 15px;
+}
+.card .text {
+  text-align: start;
+}
+.card .text .resturant-name {
+  font-size: 20px;
+  font-weight: 700;
+  color: #333;
+}
+
+.card .text ul {
+  display: flex;
+  justify-content: start;
+  padding: 0;
+  list-style: none;
+}
+
+.card .text ul li {
+  color: #706d6d;
+  font-size: 17px;
+}
+
+@media (max-width: 768px) {
+  .resurant-wrapper {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

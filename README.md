@@ -1,3 +1,15 @@
+# Description
+
+Resturant app created with Reactjs , Redux, Redux-thunk, Data fetched from Json file, react-router-dom.
+
+# Content
+
+## Home Page
+
+### Search bar - Resturants Tags - Resturants List
+
+### Details Resturant - Choosen Resturant Details
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

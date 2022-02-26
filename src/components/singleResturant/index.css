@@ -1,0 +1,102 @@
+.single-card {
+  display: flex;
+  gap: 20px;
+  background: #fff;
+  box-shadow: 0 0 25px 0 hsl(0deg 0% 87% / 75%);
+  border-radius: 10px;
+  transition: all 0.5s ease-in;
+  margin: 50px 0;
+}
+
+.card-wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  padding: 50px;
+}
+
+.resturant-image img {
+  border-radius: 50%;
+}
+
+.card-info .desc {
+  width: 60%;
+  line-height: 25px;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.card-info .head {
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 20;
+  padding-bottom: 5px;
+  position: relative;
+}
+.card-info .head:before {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: 0;
+  width: 40px;
+  height: 2px;
+  background-color: #156128;
+  border-radius: 5px;
+}
+
+.card-info ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.card-info ul li {
+  background: #fff;
+  box-shadow: 0 0 25px 0 hsl(0deg 0% 87% / 75%);
+  transition: all 0.5s ease;
+  padding: 20px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.card-info ul li:hover {
+  transform: scale(1.1);
+}
+
+.loading {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.back {
+  background: none;
+  border: 0;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .single-card,
+  .card-wrapper {
+    flex-direction: column;
+  }
+
+  .card-wrapper {
+    width: auto;
+  }
+  .resturant-image img {
+    margin-top: 50px;
+  }
+  .card-info .desc {
+    width: auto;
+  }
+  .card-info ul li {
+    padding: 15px;
+  }
+}

@@ -1,0 +1,28 @@
+.tags {
+  display: flex;
+  justify-content: space-between;
+
+  gap: 20px;
+  overflow: scroll;
+  padding: 50px 20px;
+}
+
+.tags::-webkit-scrollbar {
+  display: none;
+}
+
+.tag-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.tag-wrapper .tag-img {
+  border-radius: 15px;
+}
+
+.tag-wrapper .tag-name {
+  font-weight: 700;
+  font-size: 18px;
+}
