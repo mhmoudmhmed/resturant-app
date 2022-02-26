@@ -1,6 +1,6 @@
 # Description
 
-Resturant app created with Reactjs , Redux, Redux-thunk, Data fetched from Json file, react-router-dom.
+Resturant app created with Reactjs , Typescript, Redux, Redux-thunk, Data fetched from Json file, react-router-dom.
 
 # Content
 

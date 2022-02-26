@@ -3,10 +3,12 @@ import {
   FETCH_RESTURANTS_SUCCESS,
   FETCH_RESTURANTS_FAILURE,
   SEARCH,
+  FILER_TAG,
 } from "./resturantAction";
 
 const initialState = {
   items: [],
+  filteredItems: [],
   loading: false,
   error: null,
   value: "",
@@ -41,6 +43,16 @@ export default function resturantReducer(state = initialState, action: any) {
         loading: false,
       };
     }
+
+    case FILER_TAG:
+      const { items } = action;
+      console.log(items);
+      return {
+        ...state,
+        value: action,
+        items,
+        loading: false,
+      };
 
     default:
       return state;

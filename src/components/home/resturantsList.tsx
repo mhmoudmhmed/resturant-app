@@ -6,8 +6,6 @@ import "./index.css";
 const ResturantsList = () => {
   const { loading, items, value } = useAppSelector((state) => state.resturants);
 
-  // const [filterParam, setFilterParam] = useState(["All"]);
-
   const { brands } = items;
 
   if (loading) return <p>loading..</p>;

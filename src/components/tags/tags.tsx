@@ -1,14 +1,24 @@
-import React from "react";
-import { useAppSelector } from "../../redux/hooks";
+import React, { useEffect } from "react";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+import { fetchAllResturant, filter } from "../../redux/resturantAction";
+import Button from "../common/tagBtn";
 import "./index.css";
 
 const Tags = () => {
-  const { brands } = useAppSelector((state) => state.resturants.items);
+  const { resturants } = useAppSelector((state) => state);
+  const { items, filteredItems } = resturants;
+  const { brands } = items;
+  console.log("brands", resturants);
 
+  const dispatch = useAppDispatch();
+
+  // useEffect(() => {
+  //   dispatch(fetchAllResturant());
+  // }, [dispatch]);
+
+  // return unique tags
   const uniqueArray = brands?.map((item: any) => item?.tags);
-
   const merged = [].concat.apply([], uniqueArray);
-
   const newTags = Object.values(
     merged?.reduce(
       (acc: any, cur: any) => Object.assign(acc, { [cur.name]: cur }),
@@ -16,14 +26,19 @@ const Tags = () => {
     )
   );
 
-  const handleClick = (e: any) => {
-    console.log(e.target.value);
+  const handleClick = (value: any) => {
+    // if()
   };
 
   return (
     <div className="tags">
       {newTags?.map((tag: any, index: number) => (
-        <div key={index} className="tag-wrapper" onClick={handleClick}>
+        <Button
+          value={tag.name}
+          key={index}
+          className="tag-wrapper"
+          onClick={handleClick}
+        >
           <img
             width={200}
             height={100}
@@ -32,7 +47,7 @@ const Tags = () => {
             className="tag-img"
           />
           <p className="tag-name"> {tag.name} </p>
-        </div>
+        </Button>
       ))}
     </div>
   );

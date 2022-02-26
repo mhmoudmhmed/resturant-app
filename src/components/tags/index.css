@@ -16,6 +16,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: transparent;
+  border: 0;
+  outline: none;
+  cursor: pointer;
 }
 
 .tag-wrapper .tag-img {
