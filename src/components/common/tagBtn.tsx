@@ -1,6 +1,4 @@
 const Button = (props: any) => {
-  console.log("props", props);
-
   const handleClick = () => {
     if (props.onClick) {
       props.onClick(props.value);

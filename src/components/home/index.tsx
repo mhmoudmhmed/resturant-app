@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { fetchAllResturant, search } from "../../redux/resturantAction";
-import { useAppDispatch } from "../../redux/hooks";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import ResturantsList from "./resturantsList";
 import Tags from "../tags/tags";
 
@@ -13,8 +13,23 @@ const Home = () => {
     dispatch(fetchAllResturant());
   }, [dispatch]);
 
+  const { loading, items, value } = useAppSelector((state) => state.resturants);
+  console.log(items);
+
   const handleChange = (e: any) => {
     dispatch(search(e.target.value));
+  };
+
+  const handleClick = (value: any) => {
+    const filterItems = items?.brands?.filter((val: any) => {
+      val?.tags.filter((v: any) => {
+        if (v?.name.toLowerCase().includes(value.toLowerCase())) {
+          console.log("val", val);
+          return val;
+        }
+      });
+    });
+    console.log("filterItems", filterItems);
   };
 
   return (
@@ -28,8 +43,8 @@ const Home = () => {
             type="text"
           />
         </div>
-        <Tags />
-        <ResturantsList />
+        <Tags click={handleClick} items={items} />
+        <ResturantsList loading={loading} items={items} value={value} />
       </div>
     </div>
   );

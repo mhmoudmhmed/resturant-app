@@ -1,14 +1,11 @@
 import React, { useEffect } from "react";
-import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+import { useAppDispatch } from "../../redux/hooks";
 import { fetchAllResturant, filter } from "../../redux/resturantAction";
 import Button from "../common/tagBtn";
 import "./index.css";
 
-const Tags = () => {
-  const { resturants } = useAppSelector((state) => state);
-  const { items, filteredItems } = resturants;
-  const { brands } = items;
-  console.log("brands", resturants);
+const Tags = ({ click, items }: any) => {
+  // const { brands } = items;
 
   const dispatch = useAppDispatch();
 
@@ -17,7 +14,7 @@ const Tags = () => {
   // }, [dispatch]);
 
   // return unique tags
-  const uniqueArray = brands?.map((item: any) => item?.tags);
+  const uniqueArray = items?.brands?.map((item: any) => item?.tags);
   const merged = [].concat.apply([], uniqueArray);
   const newTags = Object.values(
     merged?.reduce(
@@ -26,10 +23,6 @@ const Tags = () => {
     )
   );
 
-  const handleClick = (value: any) => {
-    // if()
-  };
-
   return (
     <div className="tags">
       {newTags?.map((tag: any, index: number) => (
@@ -37,7 +30,7 @@ const Tags = () => {
           value={tag.name}
           key={index}
           className="tag-wrapper"
-          onClick={handleClick}
+          onClick={click}
         >
           <img
             width={200}
@@ -54,18 +47,3 @@ const Tags = () => {
 };
 
 export default Tags;
-
-// let newTags = [
-//   ...new Map(merged.map((item, key) => [item[key], item])).values(),
-// ];
-
-// let newTags = Array.from(
-//   new Set(
-//     merged?.map((data: any) => {
-//       return { ...data };
-//     })
-//   )
-// );
-// let newTags = [...new Set(merged)];
-// const newTags = merged?.filter((val, id, array) => array.indexOf(val) == id);
-// console.log("newTags", newTags);

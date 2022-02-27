@@ -1,4 +1,3 @@
-import axios from "axios";
 import data from "../data.json";
 
 export const FETCH_RESTURANTS = "FETCH_RESTURANTS";
@@ -37,7 +36,10 @@ export function search(value: string) {
   return { type: SEARCH, value };
 }
 export function filter(value: any) {
-  return { type: FILER_TAG, value };
+  return {
+    type: FILER_TAG,
+    payload: { value },
+  };
 }
 
 // Handle HTTP errors since fetch won't.

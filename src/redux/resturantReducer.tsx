@@ -45,12 +45,11 @@ export default function resturantReducer(state = initialState, action: any) {
     }
 
     case FILER_TAG:
-      const { items } = action;
-      console.log(items);
+      // const { items } = action;
+      // console.log(items);
       return {
         ...state,
-        value: action,
-        items,
+        items: action.payload.value,
         loading: false,
       };
 

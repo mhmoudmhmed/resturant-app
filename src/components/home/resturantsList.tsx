@@ -1,19 +1,16 @@
-import React, { useState } from "react";
-import { useAppSelector } from "../../redux/hooks";
+import React from "react";
 import Card from "../common/card";
 import "./index.css";
 
-const ResturantsList = () => {
-  const { loading, items, value } = useAppSelector((state) => state.resturants);
-
-  const { brands } = items;
+const ResturantsList = ({ loading, items, value }: any) => {
+  // const { brands } = items;
 
   if (loading) return <p>loading..</p>;
   return (
     <>
       <h1 className="header"> Resturants </h1>
       <div className="resurant-wrapper">
-        {brands
+        {items?.brands
           ?.filter((searchedItems: any) => {
             if (value === "") {
               return searchedItems;
